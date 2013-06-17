@@ -329,7 +329,7 @@ struct FontPimpl {
         ur.s = br.s;
         ur.t = ul.t;
         short glyph_offset = num_glyphs_cached * 4;
-        unsigned short indices[6] = {glyph_offset+0, glyph_offset+2, glyph_offset+3, glyph_offset+0, glyph_offset+3, glyph_offset+1};
+        unsigned short indices[6] = {static_cast<unsigned short>(glyph_offset+0), static_cast<unsigned short>(glyph_offset+2), static_cast<unsigned short>(glyph_offset+3), static_cast<unsigned short>(glyph_offset+0), static_cast<unsigned short>(glyph_offset+3), static_cast<unsigned short>(glyph_offset+1)};
         gltextBufferSubData(GL_ARRAY_BUFFER, (GLintptr)(num_glyphs_cached*GLYPH_VERT_SIZE), GLYPH_VERT_SIZE, corners);
         gltextBufferSubData(GL_ELEMENT_ARRAY_BUFFER, (GLintptr)(num_glyphs_cached*GLYPH_IDX_SIZE), GLYPH_IDX_SIZE, indices);
         texpos_x += x_size;
