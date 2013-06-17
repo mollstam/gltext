@@ -86,7 +86,7 @@ struct GlyphVert {
 
 static const char* shader_vert =
 "\n\
-#version 130\n\
+#version 150\n\
 \n\
 in vec2 v;\n\
 in vec2 t;\n\
@@ -103,7 +103,7 @@ void main() {\n\
 
 static const char* shader_frag =
 "\n\
-#version 130\n\
+#version 150\n\
 \n\
 in vec2 c;\n\
 out vec4 col;\n\
