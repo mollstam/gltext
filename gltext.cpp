@@ -113,6 +113,10 @@ uniform vec3 color;\n\
 \n\
 void main() {\n\
     float val = texture(tex, c).r;\n\
+    if (val == 0)\n\
+    {\n\
+        discard;\n\
+    }\n\
     col = vec4(color*val, val);\n\
 }\n\
 ";
